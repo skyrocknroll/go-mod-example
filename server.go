@@ -6,6 +6,7 @@ import (
 )
 import (
 	"github.com/gorilla/mux"
+	"github.com/sirupsen/logrus"
 )
 
 func main() {
@@ -18,4 +19,5 @@ func main() {
 }
 func HomeHandler(writer http.ResponseWriter, request *http.Request) {
 	io.WriteString(writer, "Hello World!")
+	logrus.Info(request.RemoteAddr)
 }
